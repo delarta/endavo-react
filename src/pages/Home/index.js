@@ -82,6 +82,20 @@ export default function Home() {
       });
   };
 
+  const togglePosted = (id) => {
+    console.log(id);
+    setPosts((prev) => [
+      ...prev.map((item) =>
+        item.id === id
+          ? {
+              ...item,
+              isPosted: !item.isPosted,
+            }
+          : item
+      ),
+    ]);
+  };
+
   const handleChange = (e) => {
     setNewTitle(e.target.value);
   };
@@ -135,6 +149,11 @@ export default function Home() {
                             <DeleteOutlined /> Delete Post
                           </span>
                         ),
+                      },
+                      {
+                        key: "isPosted",
+                        label: <span>Toggle Status</span>,
+                        onClick: () => togglePosted(post.id),
                       },
                     ]}
                   />
