@@ -1,0 +1,12 @@
+.custom_button {
+  all: unset;
+  background-color: teal;
+  color: white;
+  border-radius: 4px;
+  padding: 8px 12px;
+}
+
+.custom_button:hover {
+  cursor: pointer;
+  background-color: red;
+}
